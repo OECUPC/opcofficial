@@ -1,0 +1,9 @@
+@view-transition {
+    navigation: auto;
+}
+
+/* Customize the default animation behavior */
+
+::view-transition-group(root) {
+    animation-duration: 0.5s;
+}
