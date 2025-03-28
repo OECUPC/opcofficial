@@ -36,7 +36,7 @@ export const handler: Handlers<Data> = {
                 path: elem["path"],
                 youtube: elem["youtube"],
                 github: elem["github"],
-                x: elem["x_twitter"]
+                x: elem["x_twitter"],
             });
         }
 
@@ -61,6 +61,9 @@ export default function Home(pageProps: PageProps<Data>) {
             <div>
                 <Header location="/projects" />
                 <main className="min-h-screen lg:w-3/5 pt-16 my-0 mx-auto">
+                    <h1 className="text-3xl text-center mt-8">
+                        {project.title}
+                    </h1>
                     <div className="flex flex-col justify-center items-center w-full lg:p-8">
                         <figure>
                             <img
@@ -74,14 +77,23 @@ export default function Home(pageProps: PageProps<Data>) {
                             </figcaption>
                         </figure>
                         <div className="flex flex-row justify-between w-full p-4">
-							<div>
-								{(
-									Object.hasOwn(project, "github") ? <IconAnyLink path={project.github || ""}/>:
-									Object.hasOwn(project, "youtube") ? <IconAnyLink path={project.youtube || ""}/>:
-									Object.hasOwn(project, "x") ? <IconAnyLink path={project.x || ""}/>:
-									<></>
-								)}
-							</div>
+                            <div>
+                                {Object.hasOwn(project, "github")
+                                    ? (
+                                        <IconAnyLink
+                                            path={project.github || ""}
+                                        />
+                                    )
+                                    : Object.hasOwn(project, "youtube")
+                                    ? (
+                                        <IconAnyLink
+                                            path={project.youtube || ""}
+                                        />
+                                    )
+                                    : Object.hasOwn(project, "x")
+                                    ? <IconAnyLink path={project.x || ""} />
+                                    : <></>}
+                            </div>
                             <a
                                 href={project.path}
                                 className="p-4 rounded-full bg-opc-secondary text-white"
@@ -91,9 +103,6 @@ export default function Home(pageProps: PageProps<Data>) {
                         </div>
                     </div>
                     <article className="bg-white mt-4">
-                        <h1 className="text-3xl text-center">
-                            {project.title}
-                        </h1>
                         <article
                             data-color-mode="light"
                             data-light-theme="light"
