@@ -40,7 +40,7 @@ export function Header(data: Data) {
                                         className="
 									inline-block
 									relative
-									h-16 min-w-32 pb-1
+									h-16 w-full min-w-32 pb-1
 									leading-[4] align-middle text-center
 
 									inset-shadow-sm
@@ -61,7 +61,7 @@ export function Header(data: Data) {
                                         className="
 									inline-block
 									relative
-									h-16 min-w-32 pb-1
+									h-16 w-full min-w-32 pb-1
 									leading-[4] align-middle text-center
 
 									hover:before:scale-x-100
