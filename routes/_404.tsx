@@ -1,7 +1,7 @@
 import { Head } from "$fresh/runtime.ts";
 
-import Header from "../components/Header.tsx";
-import Footer from "../components/Footer.tsx";
+import { Header } from "../islands/Header.tsx";
+import { Footer } from "../components/Footer.tsx";
 
 import HistoryBack from "../islands/HistoryBack.tsx";
 

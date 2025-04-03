@@ -4,17 +4,34 @@ interface Data {
     location: string;
 }
 
-export default function Header(data: Data) {
+export function Header(data: Data) {
     console.log(data.location);
     return (
         <header className="fixed top-0 bg-white shadow-md">
             <nav className="flex justify-around w-screen h-16">
-                <a className="flex justify-start items-center" href="/#">
+                <a className="flex items-center" href="/#">
                     <img src="/images/icons/OPC_Icon.svg" className="size-16" />
                     <p>OECUPC</p>
                 </a>
 
-                <ul className="hidden lg:flex lg:flex-row">
+                <input
+                    type="checkbox"
+                    id="toggle-nav"
+                    className="peer hidden"
+                />
+                <label
+                    htmlFor="toggle-nav"
+                    className={`
+						toggle-nav-label
+						global-nav__toggle-label z-50 block lg:hidden max-lg:fixed max-lg:top-0 max-lg:right-6 h-16 w-12 text-center
+					`}
+                >
+                    <span className="block w-full h-1 mt-6 bg-slate-500 rounded-md">
+                    </span>
+                    <span className="block w-full h-1 mt-2 bg-slate-500 rounded-md">
+                    </span>
+                </label>
+                <ul className="h-screen lg:flex lg:flex-row max-lg:w-2/3 max-lg:pt-16 max-lg:bg-opc-secondary/70 max-lg:text-white text-center transition-transform duration-200 max-lg:translate-x-full max-lg:peer-checked:translate-x-0">
                     {Navigations.map((elem) => (
                         <li>
                             {(data.location === elem.path)

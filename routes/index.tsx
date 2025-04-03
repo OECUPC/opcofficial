@@ -1,9 +1,10 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-import Header from "../components/Header.tsx";
-import Footer from "../components/Footer.tsx";
+import { Header } from "../islands/Header.tsx";
+import { Footer } from "../components/Footer.tsx";
 
 import { NewsItem } from "../types/NewsItem.ts";
+import { CircleIntroduce } from "../components/CircleIntroduce.tsx";
 
 interface Data {
     news: NewsItem[];
@@ -61,18 +62,7 @@ export default function Home({ data }: PageProps<Data>) {
                         OECU Programming Circle
                     </h1>
                     <div className="flex flex-col justify-center w-full h-60">
-                        <p>
-                            私たちはプログラミングをゆるく楽しむ団体です。
-                        </p>
-                        <ul className="ml-8 list-disc">
-                            <li>プログラミングに興味がある！</li>
-                            <li>プログラミングのスキルアップをしたい！</li>
-                            <li>プログラミングでわからないことを聞きたい！</li>
-                            <li>自分で何か作品を作りたい！</li>
-                        </ul>
-                        <p>
-                            など、未経験の方から上級者の方まで、大歓迎です！
-                        </p>
+                        <CircleIntroduce />
                     </div>
                 </div>
                 <article className="bg-white">

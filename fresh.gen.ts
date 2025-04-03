@@ -8,6 +8,7 @@ import * as $about from "./routes/about.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $project_name_ from "./routes/project/[name].tsx";
 import * as $projects from "./routes/projects.tsx";
+import * as $Header from "./islands/Header.tsx";
 import * as $HistoryBack from "./islands/HistoryBack.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -21,6 +22,7 @@ const manifest = {
         "./routes/projects.tsx": $projects,
     },
     islands: {
+        "./islands/Header.tsx": $Header,
         "./islands/HistoryBack.tsx": $HistoryBack,
     },
     baseUrl: import.meta.url,

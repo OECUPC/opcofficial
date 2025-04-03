@@ -2,14 +2,14 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import { CSS } from "jsr:@deno/gfm";
 
-import Header from "../../components/Header.tsx";
-import Footer from "../../components/Footer.tsx";
+import { Header } from "../../islands/Header.tsx";
+import { Footer } from "../../components/Footer.tsx";
 
 import RequestMicroCMSAPI from "../../tools/RequestMicroCMSAPI.ts";
 
 import { ProjectItem } from "../../types/ProjectItem.ts";
 
-import IconAnyLink from "../../components/IconAnyLink.tsx";
+import { ExternalIconLink } from "../../components/ExternalIconLink.tsx";
 
 interface Data {
     projects: ProjectItem[];
@@ -43,6 +43,8 @@ export const handler: Handlers<Data> = {
         return ctx.render(data);
     },
 };
+
+const LinkStyle = "inline-block w-14 h-14 p-2 rounded-full transition-shadow duration-200 shadow-sm hover:shadow-lg";
 
 export default function Home(pageProps: PageProps<Data>) {
     const name: string = pageProps.params.name;
@@ -80,18 +82,25 @@ export default function Home(pageProps: PageProps<Data>) {
                             <div>
                                 {Object.hasOwn(project, "github")
                                     ? (
-                                        <IconAnyLink
+                                        <ExternalIconLink
+                                            className={LinkStyle}
                                             path={project.github || ""}
                                         />
                                     )
                                     : Object.hasOwn(project, "youtube")
                                     ? (
-                                        <IconAnyLink
+                                        <ExternalIconLink
+                                            className={LinkStyle}
                                             path={project.youtube || ""}
                                         />
                                     )
                                     : Object.hasOwn(project, "x")
-                                    ? <IconAnyLink path={project.x || ""} />
+                                    ? (
+                                        <ExternalIconLink
+                                            className={LinkStyle}
+                                            path={project.x || ""}
+                                        />
+                                    )
                                     : <></>}
                             </div>
                             <a
