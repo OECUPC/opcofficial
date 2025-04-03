@@ -1,7 +1,7 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-import Header from "../components/Header.tsx";
-import Footer from "../components/Footer.tsx";
+import { Header } from "../islands/Header.tsx";
+import { Footer } from "../components/Footer.tsx";
 
 import RequestMicroCMSAPI from "../tools/RequestMicroCMSAPI.ts";
 
@@ -46,7 +46,7 @@ export default function Home({ data }: PageProps<Data>) {
             <Header location="/projects" />
             <main className="min-h-screen pt-16">
                 <article className="bg-white">
-                    <h2 className="text-4xl text-center py-8">プロジェクト</h2>
+                    <h1 className="text-4xl text-center py-8">プロジェクト</h1>
                     <article className="grid gap-8 grid-cols-1 lg:grid-cols-3 p-8">
                         {data.projects.map((elem) => (
                             <section className="w-full rounded-lg transition-shadow duration-300 shadow-sm hover:shadow-lg">
@@ -62,9 +62,9 @@ export default function Home({ data }: PageProps<Data>) {
                                                 : "/images/no_image.webp"}
                                         />
                                         <figcaption className="mt-2">
-                                            <h3 className="text-2xl">
+                                            <h2 className="text-2xl">
                                                 {elem.title}
-                                            </h3>
+                                            </h2>
                                             <p className="text-gray-400">
                                                 {elem.updated_at.toLocaleString(
                                                     "ja-JP",
