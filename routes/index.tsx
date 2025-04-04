@@ -52,13 +52,13 @@ export default function Home({ data }: PageProps<Data>) {
             <Header location="/index" />
             <main className="min-h-screen pt-16">
                 <div className="
-				max-w-80 lg:w-2/5 lg:max-w-full lg:h-80
-				m-6 lg:ml-16 my-44 p-4
+				w-full lg:w-2/5 lg:max-w-full lg:h-80
+				mx-auto lg:ml-16 my-44 p-4
 
 				bg-white
 				rounded-xl
 				">
-                    <h1 className="text-3xl text-center">
+                    <h1 className="text-2xl lg:text-3xl my-4 text-center">
                         OECU Programming Circle
                     </h1>
                     <div className="flex flex-col justify-center w-full h-60">
