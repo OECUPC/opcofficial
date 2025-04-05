@@ -1,4 +1,4 @@
-export interface ProjectItem {
+export type ProjectItem = {
     id: string;
     title: string;
     updated_at: Date;
