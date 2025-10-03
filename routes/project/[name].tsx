@@ -1,6 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
-import { CSS } from "jsr:@deno/gfm";
+import { CSS } from "jsr:@deno/gfm@0.10.0";
 
 import { Header } from "../../islands/Header.tsx";
 import { Footer } from "../../components/Footer.tsx";
