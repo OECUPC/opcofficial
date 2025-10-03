@@ -57,8 +57,10 @@ const Contents = [
         title: "相談・入部等",
         content: (
             <>
-                <ExternalIconLink path={SNS.x} value="公式X(旧Twitter)" className="inline-block" />のDM<br />
-                または、<a href="">お問い合わせ</a>までご連絡ください！
+                <p>
+                    <ExternalIconLink path={SNS.x} value="公式X(旧Twitter)" className="inline-block" />のDM<br />
+                    または、<a href="/contact">お問い合わせ</a>までご連絡ください！
+                </p>
             </>
         ),
         image: "/images/profile.webp"
