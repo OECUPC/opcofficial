@@ -31,7 +31,7 @@ export function Header(data: Data) {
                     <span className="block w-full h-1 mt-2 bg-slate-500 rounded-md">
                     </span>
                 </label>
-                <ul className="h-screen lg:flex lg:flex-row max-lg:w-2/3 max-lg:pt-16 max-lg:bg-opc-secondary/70 max-lg:text-white text-center transition-transform duration-200 max-lg:translate-x-full max-lg:peer-checked:translate-x-0">
+                <ul className="h-screen lg:h-full lg:flex lg:flex-row max-lg:w-2/3 max-lg:pt-16 max-lg:bg-opc-secondary/70 max-lg:text-white text-center transition-transform duration-200 max-lg:translate-x-full max-lg:peer-checked:translate-x-0">
                     {Navigations.map((elem) => (
                         <li>
                             {(data.location === elem.path)

@@ -54,7 +54,7 @@ export default function Home({ data }: PageProps<Data>) {
                     記事
                 </h1>
                 <article className="grid gap-8 grid-cols-1 lg:grid-cols-3 p-8">
-                    {data.blogs.map((elem) => (
+                    {data.blogs.length <= 0 ? <p>現在掲載中の記事はありません。</p>:data.blogs.map((elem) => (
                         <section className="w-full rounded-lg transition-shadow duration-300 shadow-sm hover:shadow-lg">
                             <a
                                 className="text-center"
