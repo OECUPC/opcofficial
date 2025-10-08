@@ -1,3 +1,5 @@
+import { define } from "../../utils.ts";
+
 import { PageProps } from "fresh";
 import { Head } from "fresh/runtime";
 import { CSS } from "@deno/gfm";
@@ -10,24 +12,21 @@ import RequestMicroCMSAPI from "../../tools/RequestMicroCMSAPI.ts";
 import { ProjectItem } from "../../types/ProjectItem.ts";
 
 import { ExternalIconLink } from "../../components/ExternalIconLink.tsx";
-import { Handlers } from "fresh/compat";
 
 interface Data {
     projects: ProjectItem[];
 }
 
-export const handler: Handlers<Data> = {
-    async GET(ctx) {
+export const handler = define.handlers({
+    async GET(_) {
         const json = await RequestMicroCMSAPI("projects", false);
 
         const rawData = json["contents"];
 
-        const data: Data = {
-            projects: [],
-        };
+        const projects = [];
 
         for (const elem of rawData) {
-            data.projects.push({
+            projects.push({
                 id: elem["id"],
                 title: elem["title"],
                 updated_at: new Date(elem["updatedAt"]),
@@ -41,9 +40,9 @@ export const handler: Handlers<Data> = {
             });
         }
 
-        return ctx.render(data);
+        return { data: { projects }};
     },
-};
+});
 
 const LinkStyle =
     "inline-block w-14 h-14 p-2 rounded-full transition-shadow duration-200 shadow-sm hover:shadow-lg";

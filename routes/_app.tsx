@@ -33,7 +33,7 @@ export default define.page(function App({ Component }) {
                 />
                 <meta
                     property="og:image"
-                    content="images/icons/icon-512x512.png"
+                    content="/images/icons/icon-512x512.png"
                 />
                 <meta name="twitter:card" content="summary" />
 

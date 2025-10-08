@@ -12,7 +12,7 @@ interface Data {
 }
 
 export const handler = define.handlers({
-    async GET(ctx) {
+    async GET(_) {
         const API_KEY = Deno.env.get("MICROCMS_API_KEY") || "";
         const ENDPOINT = `${
             Deno.env.get("MICROCMS_API_ENDPOINT") || ""
