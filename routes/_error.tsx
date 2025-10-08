@@ -11,6 +11,8 @@ import { HttpError, PageProps } from "fresh";
 export default define.page(function ErrorPage(props: PageProps) {
     const error = props.error;
 
+    console.log(error);
+
     if (error instanceof HttpError) {
         const status = error.status;
 
