@@ -3,7 +3,6 @@ import "prismjs/components/prism-core.js";
 import { define } from "../../utils.ts";
 
 import { PageProps } from "fresh";
-import { Head } from "fresh/runtime";
 
 import { Header } from "../../islands/Header.tsx";
 import { Footer } from "../../components/Footer.tsx";
@@ -41,7 +40,7 @@ export const handler = define.handlers({
             });
         }
 
-        return { data: { projects }};
+        return { data: { projects } };
     },
 });
 
@@ -56,70 +55,68 @@ export default function Home(pageProps: PageProps<Data>) {
         projects[projects.findIndex((elem: ProjectItem) => elem.id === name)];
 
     return (
-        <>
-            <div>
-                <Header location="/projects" />
-                <main className="min-h-screen lg:w-3/5 pt-16 my-0 mx-auto">
-                    <h1 className="text-3xl text-center mt-8">
-                        {project.title}
-                    </h1>
-                    <div className="flex flex-col justify-center items-center w-full lg:p-8">
-                        <figure>
-                            <img
-                                className="max-h-96"
-                                src={project.eyecatch.url}
-                            />
-                            <figcaption>
-                                <p className="m-4 whitespace-pre-wrap">
-                                    {project.description}
-                                </p>
-                            </figcaption>
-                        </figure>
-                        <div className="flex flex-row justify-between w-full p-4">
-                            <div>
-                                {Object.hasOwn(project, "github")
-                                    ? (
-                                        <ExternalIconLink
-                                            className={LinkStyle}
-                                            path={project.github || ""}
-                                        />
-                                    )
-                                    : Object.hasOwn(project, "youtube")
-                                    ? (
-                                        <ExternalIconLink
-                                            className={LinkStyle}
-                                            path={project.youtube || ""}
-                                        />
-                                    )
-                                    : Object.hasOwn(project, "x")
-                                    ? (
-                                        <ExternalIconLink
-                                            className={LinkStyle}
-                                            path={project.x || ""}
-                                        />
-                                    )
-                                    : <></>}
-                            </div>
-                            <a
-                                href={project.path}
-                                className="p-4 rounded-full bg-opc-secondary text-white"
-                            >
-                                {project.title}へはこちら
-                            </a>
+        <div>
+            <Header location="/projects" />
+            <main className="min-h-screen lg:w-3/5 pt-16 my-0 mx-auto">
+                <h1 className="text-3xl text-center mt-8">
+                    {project.title}
+                </h1>
+                <div className="flex flex-col justify-center items-center w-full lg:p-8">
+                    <figure>
+                        <img
+                            className="max-h-96"
+                            src={project.eyecatch.url}
+                        />
+                        <figcaption>
+                            <p className="m-4 whitespace-pre-wrap">
+                                {project.description}
+                            </p>
+                        </figcaption>
+                    </figure>
+                    <div className="flex flex-row justify-between w-full p-4">
+                        <div>
+                            {Object.hasOwn(project, "github")
+                                ? (
+                                    <ExternalIconLink
+                                        className={LinkStyle}
+                                        path={project.github || ""}
+                                    />
+                                )
+                                : Object.hasOwn(project, "youtube")
+                                ? (
+                                    <ExternalIconLink
+                                        className={LinkStyle}
+                                        path={project.youtube || ""}
+                                    />
+                                )
+                                : Object.hasOwn(project, "x")
+                                ? (
+                                    <ExternalIconLink
+                                        className={LinkStyle}
+                                        path={project.x || ""}
+                                    />
+                                )
+                                : <></>}
                         </div>
-                    </div>
-                    <article className="bg-white mt-4">
-                        <article
-                            className="p-8 my-0 mx-auto markdown"
-                            dangerouslySetInnerHTML={{
-                                __html: project.content,
-                            }}
+                        <a
+                            href={project.path}
+                            className="p-4 rounded-full bg-opc-secondary text-white"
                         >
-                        </article>
+                            {project.title}へはこちら
+                        </a>
+                    </div>
+                </div>
+                <article className="bg-white mt-4">
+                    <article
+                        className="p-8 my-0 mx-auto markdown"
+                        dangerouslySetInnerHTML={{
+                            __html: project.content,
+                        }}
+                    >
                     </article>
-                </main>
-                <Footer />
-            </div>
-        </>
+                </article>
+            </main>
+            <Footer />
+        </div>
     );
 }
