@@ -11,4 +11,4 @@ export type ProjectItem = {
     youtube?: string;
     github?: string;
     x?: string;
-}
+};

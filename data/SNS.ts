@@ -1,3 +1,3 @@
 export const SNS = {
-	x: "https://x.com/oecuprogramming"
-}
+    x: "https://x.com/oecuprogramming",
+};

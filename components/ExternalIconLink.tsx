@@ -1,7 +1,7 @@
 import IconLink from "tabler_icons/link.tsx";
 
 import IconBrandGithub from "tabler_icons/brand-github.tsx";
-import IconBrandX from "tabler_icons/brand-x.tsx"
+import IconBrandX from "tabler_icons/brand-x.tsx";
 import { JSX } from "preact/jsx-runtime/src/index.d.ts";
 
 interface Data {
@@ -18,7 +18,7 @@ interface IconType {
 
 const IconMap: IconType = {
     "https://github.com": IconBrandGithub,
-    "https://x.com": IconBrandX
+    "https://x.com": IconBrandX,
 };
 
 export function ExternalIconLink({ path, value, className }: Data) {
@@ -32,7 +32,7 @@ export function ExternalIconLink({ path, value, className }: Data) {
         IconComponent = IconMap[Object.keys(IconMap)[findedIndex]];
     }
 
-	if(path.length <= 0) return <></>;
+    if (path.length <= 0) return <></>;
 
     return (
         <a

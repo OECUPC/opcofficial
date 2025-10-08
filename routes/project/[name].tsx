@@ -1,5 +1,5 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
-import { Head } from "$fresh/runtime.ts";
+import { PageProps } from "fresh";
+import { Head } from "fresh/runtime";
 import { CSS } from "@deno/gfm";
 
 import { Header } from "../../islands/Header.tsx";
@@ -10,13 +10,14 @@ import RequestMicroCMSAPI from "../../tools/RequestMicroCMSAPI.ts";
 import { ProjectItem } from "../../types/ProjectItem.ts";
 
 import { ExternalIconLink } from "../../components/ExternalIconLink.tsx";
+import { Handlers } from "fresh/compat";
 
 interface Data {
     projects: ProjectItem[];
 }
 
 export const handler: Handlers<Data> = {
-    async GET(_req, ctx) {
+    async GET(ctx) {
         const json = await RequestMicroCMSAPI("projects", false);
 
         const rawData = json["contents"];
@@ -44,7 +45,8 @@ export const handler: Handlers<Data> = {
     },
 };
 
-const LinkStyle = "inline-block w-14 h-14 p-2 rounded-full transition-shadow duration-200 shadow-sm hover:shadow-lg";
+const LinkStyle =
+    "inline-block w-14 h-14 p-2 rounded-full transition-shadow duration-200 shadow-sm hover:shadow-lg";
 
 export default function Home(pageProps: PageProps<Data>) {
     const name: string = pageProps.params.name;

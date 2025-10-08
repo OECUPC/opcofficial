@@ -1,9 +1,11 @@
+import { define } from "../utils.ts";
+
 import { Header } from "../islands/Header.tsx";
 import { Footer } from "../components/Footer.tsx";
 
 import { CircleIntroduce } from "../components/CircleIntroduce.tsx";
 
-export default function Home() {
+export default define.page(function Home() {
     return (
         <div className="bg-fixed bg-center bg-cover bg-[url(/images/backgrounds/activity_bg.webp)]">
             <Header location="/index" />
@@ -39,4 +41,4 @@ export default function Home() {
             <Footer />
         </div>
     );
-}
+});

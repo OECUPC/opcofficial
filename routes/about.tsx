@@ -1,3 +1,5 @@
+import { define } from "../utils.ts";
+
 import { Header } from "../islands/Header.tsx";
 import { Footer } from "../components/Footer.tsx";
 
@@ -51,23 +53,29 @@ const Contents = [
                 </p>
             </>
         ),
-        image: "/images/place.webp"
+        image: "/images/place.webp",
     },
     {
         title: "相談・入部等",
         content: (
             <>
                 <p>
-                    <ExternalIconLink path={SNS.x} value="公式X(旧Twitter)" className="inline-block" />のDM<br />
-                    または、<a href="/contact">お問い合わせ</a>までご連絡ください！
+                    <ExternalIconLink
+                        path={SNS.x}
+                        value="公式X(旧Twitter)"
+                        className="inline-block"
+                    />のDM<br />
+                    または、<a href="/contact">
+                        お問い合わせ
+                    </a>までご連絡ください！
                 </p>
             </>
         ),
-        image: "/images/profile.webp"
-    }
+        image: "/images/profile.webp",
+    },
 ];
 
-export default function Home() {
+export default define.page(function Home() {
     return (
         <div>
             <Header location="/about" />
@@ -152,4 +160,4 @@ export default function Home() {
             <Footer />
         </div>
     );
-}
+});

@@ -1,4 +1,4 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
+import { PageProps } from "fresh";
 
 import { Header } from "../islands/Header.tsx";
 import { Footer } from "../components/Footer.tsx";
@@ -6,23 +6,22 @@ import { Footer } from "../components/Footer.tsx";
 import RequestMicroCMSAPI from "../tools/RequestMicroCMSAPI.ts";
 
 import { ProjectItem } from "../types/ProjectItem.ts";
+import { define } from "../utils.ts";
 
 interface Data {
     projects: ProjectItem[];
 }
 
-export const handler: Handlers<Data> = {
-    async GET(_req, ctx) {
+export const handler = define.handlers({
+    async GET(_) {
         const json = await RequestMicroCMSAPI("projects", false);
 
         const rawData = json["contents"];
 
-        const data: Data = {
-            projects: [],
-        };
+        const projects = [];
 
         for (const elem of rawData) {
-            data.projects.push({
+            projects.push({
                 id: elem["id"],
                 title: elem["title"],
                 updated_at: new Date(elem["updatedAt"]),
@@ -32,13 +31,13 @@ export const handler: Handlers<Data> = {
                 path: elem["path"],
                 youtube: elem["youtube"],
                 github: elem["github"],
-                x: elem["x_twitter"]
+                x: elem["x_twitter"],
             });
         }
 
-        return ctx.render(data);
+        return { data: { projects } };
     },
-};
+});
 
 export default function Home({ data }: PageProps<Data>) {
     return (
