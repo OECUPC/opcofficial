@@ -13,54 +13,27 @@ export default define.page(function ErrorPage(props: PageProps) {
 
     if (error instanceof HttpError) {
         const status = error.status;
-        if (status === 404) {
-            return (
-                <>
-                    <Head>
-                        <title>404 - Page not found</title>
-                    </Head>
-                    <div>
-                        <Header location="/" />
-                        <main className="min-h-screen pt-16">
-                            <div className="mt-16 text-center">
-                                <h1 className="mt-32 text-3xl">
-                                    404 Page Not Found
-                                </h1>
-                                <p>
-                                    お探しのページは見つかりませんでした。
-                                </p>
-                                <HistoryBack>前のページに戻る</HistoryBack>
-                            </div>
-                        </main>
-                        <Footer />
-                    </div>
-                </>
-            );
-        } else {
-            return (
-                <>
-                    <Head>
-                        <title>Oh no...</title>
-                    </Head>
+        return (
+            <>
+                <Head>
+                    <title>Oh no...</title>
+                </Head>
 
-                    <div>
-                        <Header location="/" />
-                        <main className="min-h-screen pt-16">
-                            <div className="mt-16 text-center">
-                                <h1 className="mt-32 text-3xl">
-                                    {status} Page Not Found
-                                </h1>
-                                <p>
-                                    お探しのページは見つかりませんでした。
-                                </p>
-                                <HistoryBack>前のページに戻る</HistoryBack>
-                            </div>
-                        </main>
-                        <Footer />
-                    </div>
-                </>
-            );
-        }
+                <div>
+                    <Header location="/" />
+                    <main className="min-h-screen pt-16">
+                        <div className="mt-16 text-center">
+                            <h1 className="mt-32 text-3xl">
+                                Error: {status}
+                            </h1>
+                            <HistoryBack>前のページに戻る</HistoryBack>
+                        </div>
+                    </main>
+                    <Footer />
+                </div>
+            </>
+        );
     }
+
     return <></>;
 });
