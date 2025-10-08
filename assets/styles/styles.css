@@ -6,6 +6,10 @@
 }
 
 @layer base {
+  html {
+    font-size: 18px;
+  }
+
   body {
     font-family: "Zen Maru Gothic", sans-serif;
     color: #505050;
