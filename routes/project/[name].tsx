@@ -4,7 +4,6 @@ import { define } from "../../utils.ts";
 
 import { PageProps } from "fresh";
 import { Head } from "fresh/runtime";
-import { CSS } from "@deno/gfm";
 
 import { Header } from "../../islands/Header.tsx";
 import { Footer } from "../../components/Footer.tsx";
@@ -58,11 +57,6 @@ export default function Home(pageProps: PageProps<Data>) {
 
     return (
         <>
-            <Head>
-                <style>
-                    {CSS}
-                </style>
-            </Head>
             <div>
                 <Header location="/projects" />
                 <main className="min-h-screen lg:w-3/5 pt-16 my-0 mx-auto">
@@ -116,10 +110,7 @@ export default function Home(pageProps: PageProps<Data>) {
                     </div>
                     <article className="bg-white mt-4">
                         <article
-                            data-color-mode="light"
-                            data-light-theme="light"
-                            data-dark-theme="dark"
-                            className="p-8 my-0 mx-auto markdown-body"
+                            className="p-8 my-0 mx-auto markdown"
                             dangerouslySetInnerHTML={{
                                 __html: project.content,
                             }}

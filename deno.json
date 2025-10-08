@@ -19,9 +19,7 @@
         "vite": "npm:vite@^7.1.9",
         "tailwindcss": "npm:tailwindcss@^4.1.10",
         "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.12",
-        "@deno/gfm": "jsr:@deno/gfm@^0.11.0",
-        "tabler_icons/": "https://deno.land/x/tabler_icons_tsx@0.0.7/tsx/",
-        "github-slugger": "npm:github-slugger@^2.0.0"
+        "tabler_icons/": "https://deno.land/x/tabler_icons_tsx@0.0.7/tsx/"
     },
     "compilerOptions": {
         "lib": ["dom", "dom.asynciterable", "dom.iterable", "deno.ns"],
