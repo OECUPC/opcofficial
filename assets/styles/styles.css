@@ -14,7 +14,7 @@
     font-weight: bold;
   }
   p a {
-    color: var(--color-opc-color);
+    color: var(--color-opc-secondary);
   }
 }
 .toggle-nav-label * {
