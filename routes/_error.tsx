@@ -44,7 +44,7 @@ export default define.page(function ErrorPage(props: PageProps) {
     return (
         <>
             <Head>
-                <title>Something went wron.</title>
+                <title>Something went wrong.</title>
             </Head>
 
             <div>
