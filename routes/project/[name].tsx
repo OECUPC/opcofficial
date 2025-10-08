@@ -1,3 +1,5 @@
+import "prismjs";
+
 import { define } from "../../utils.ts";
 
 import { PageProps } from "fresh";
