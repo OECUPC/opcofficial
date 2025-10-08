@@ -15,11 +15,12 @@
         "preact": "npm:preact@^10.27.2",
         "@preact/signals": "npm:@preact/signals@^2.3.1",
         "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.4",
+        "prismjs": "npm:prismjs@^1.30.0",
         "vite": "npm:vite@^7.1.9",
         "tailwindcss": "npm:tailwindcss@^4.1.10",
         "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.12",
         "@deno/gfm": "jsr:@deno/gfm@^0.11.0",
-        "tabler_icons/": "https://deno.land/x/tabler_icons_tsx@0.0.7/tsx/"
+        "tabler_icons/": "https://deno.land/x/tabler_icons_tsx@0.0.7/tsx/",
     },
     "compilerOptions": {
         "lib": ["dom", "dom.asynciterable", "dom.iterable", "deno.ns"],
