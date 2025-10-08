@@ -1,4 +1,4 @@
-import "prismjs";
+import "prismjs/components/prism-core.js";
 
 import { define } from "../../utils.ts";
 
