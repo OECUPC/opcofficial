@@ -34,6 +34,34 @@ export function Header(data: Data) {
                 <ul className="h-screen lg:h-full lg:flex lg:flex-row max-lg:w-2/3 max-lg:pt-16 max-lg:bg-opc-secondary/70 max-lg:text-white text-center transition-transform duration-200 max-lg:translate-x-full max-lg:peer-checked:translate-x-0">
                     {Navigations.map((elem) => (
                         <li>
+                            <a href={elem.path}
+                                className={`
+                                inline-block
+                                relative
+                                h-16 w-full min-w-32 pb-1
+                                leading-[4] align-middle text-center
+
+                                ${
+                                    (data.location === elem.path) ? 
+                                    "":
+                                    `
+                                        hover:before:scale-x-100 hover:before:origin-left
+
+                                        before:origin-right before:transition-transform
+                                        before:scale-x-0 before:duration-200
+                                    `
+                                }
+
+                                before:content-['']
+								before:absolute
+								before:left-0 before:bottom-0
+								before:w-full before:h-0.5
+
+								before:bg-opc-secondary
+                            `}>
+                                {elem.title}
+                            </a>
+                            {/*
                             {(data.location === elem.path)
                                 ? (
                                     <a
@@ -80,7 +108,7 @@ export function Header(data: Data) {
                                     >
                                         {elem.title}
                                     </a>
-                                )}
+                                )*/}
                         </li>
                     ))}
                 </ul>

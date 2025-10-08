@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-opc-color: #00FCDA;
+  --color-opc-secondary: #3c968A;
+}
+
 @layer base {
   body {
     font-family: "Zen Maru Gothic", sans-serif;
@@ -12,7 +14,7 @@
     font-weight: bold;
   }
   p a {
-    color: #00CDAF;
+    color: var(--color-opc-color);
   }
 }
 .toggle-nav-label * {

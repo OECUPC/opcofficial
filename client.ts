@@ -1,2 +1,2 @@
-import "./assets/styles/css/styles.css";
-import "./assets/styles/css/view-transition.css";
+import "./assets/styles/styles.css";
+import "./assets/styles/view-transition.css";
