@@ -45,7 +45,9 @@ export const handler = define.handlers({
     },
 });
 
-export default define.page(function Home({ data }: PageProps<Data>) {
+export default define.page(function Home(ctx) {
+    const data = ctx.data;
+
     return (
         <div>
             <Header location="/blogs" />
