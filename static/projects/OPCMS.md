@@ -1,9 +1,13 @@
 ---
+id: OPCMS
 title: OPCMS
-author: 23_tas9
-description: OECU Programming Circle通称OPC公式サイト\nOPCMSはサークルの活動内容を発信し、メンバーや外部の方々が情報を得やすくすることを目的としています。
-eye_catch: assets/images/projects/OPCMS/eye_catch.webp
+authors: 23_tas9
+description: OECU Programming Circle通称OPC公式サイト
+details: OPCMSはサークルの活動内容を発信し、メンバーや外部の方々が情報を得やすくすることを目的としています。
+eye_catch: /images/projects/opcms.webp
 url: https://opcofficial.deno.dev/
+updated_at: 2025/12/18
+github: https://github.com/OECUPC/opcofficial
 ---
 
 ## 技術スタック

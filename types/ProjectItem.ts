@@ -1,14 +1,18 @@
 export type ProjectItem = {
     id: string;
     title: string;
-    updated_at: Date;
-    eyecatch: {
-        url: string;
-    };
+    authors: string[];
     description: string;
-    content: string;
-    path: string;
+    details: string;
+    eye_catch: string;
+    url: string;
+
+    published_at: Date;
+    updated_at: Date;
+
     youtube?: string;
     github?: string;
     x?: string;
+
+    body: string;
 };
