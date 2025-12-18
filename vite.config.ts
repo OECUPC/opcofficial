@@ -7,8 +7,8 @@ export default defineConfig({
     build: {
         rollupOptions: {
             external: [
-                // github-slugger(jsr:@deno:gfm/mod.ts内)をビルド対象から除外
-                /^npm:github-slugger/,
+                // npm:をビルド対象から除外(jsr:@deno/gfmでエラーが出るため)
+                /^npm:/,
             ],
         },
     },
