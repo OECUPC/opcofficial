@@ -29,7 +29,7 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "opcofficial-v2"
+          project: "opcofficial-v2test"
           entrypoint: "./_fresh/server.js"
           root: ""
           
