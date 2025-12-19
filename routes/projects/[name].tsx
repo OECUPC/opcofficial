@@ -13,7 +13,7 @@ import { ProjectItem } from "../../types/ProjectItem.ts";
 import { ExternalIconLink } from "../../components/ExternalIconLink.tsx";
 
 import { extract } from "$std/front_matter/yaml.ts";
-import { CSS, render } from "@deno/gfm";
+import { marked } from "marked";
 
 interface Data {
     project: ProjectItem;
@@ -41,8 +41,10 @@ export const handler = define.handlers({
             github: data.attrs.github,
             x: data.attrs.x,
 
-            body: data.body,
+            body: marked.parse(data.body),
         };
+
+        console.log(project);
 
         return { data: { project } };
     },
@@ -56,7 +58,6 @@ export default function Home({ data }: PageProps<Data>) {
         <>
             <Head>
                 <style>
-                    {CSS}
                 </style>
             </Head>
             <div>
@@ -114,9 +115,9 @@ export default function Home({ data }: PageProps<Data>) {
                             data-color-mode="light"
                             data-light-theme="light"
                             data-dark-theme="dark"
-                            className="p-8 my-0 mx-auto markdown-body"
+                            className="p-8 my-0 mx-auto markdown"
                             dangerouslySetInnerHTML={{
-                                __html: render(data.project.body),
+                                __html: data.project.body,
                             }}
                         >
                         </article>

@@ -5,12 +5,12 @@ import { Head } from "fresh/runtime";
 import { Header } from "../islands/Header.tsx";
 import { Footer } from "../components/Footer.tsx";
 
-import HistoryBack from "../islands/HistoryBack.tsx";
 import { HttpError, PageProps } from "fresh";
 
 export default define.page(function ErrorPage(props: PageProps) {
     const error = props.error;
 
+    console.log("== Error ==");
     console.log(error);
 
     if (error instanceof HttpError) {
@@ -33,7 +33,6 @@ export default define.page(function ErrorPage(props: PageProps) {
                                 <p>
                                     お探しのページは見つかりませんでした。
                                 </p>
-                                <HistoryBack>前のページに戻る</HistoryBack>
                             </div>
                         </main>
                         <Footer />
@@ -59,7 +58,6 @@ export default define.page(function ErrorPage(props: PageProps) {
                         <p>
                             ページで問題が発生しました。
                         </p>
-                        <HistoryBack>前のページに戻る</HistoryBack>
                     </div>
                 </main>
                 <Footer />
