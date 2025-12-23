@@ -6,8 +6,10 @@ interface Props {
 
 export default function HistoryBack(data: Props) {
     return (
-        <a href="#" onClick={() => history.back()}>
-            {data.children}
-        </a>
+        <p>
+            <a href="#" onClick={() => history.back()}>
+                {data.children}
+            </a>
+        </p>
     );
 }
