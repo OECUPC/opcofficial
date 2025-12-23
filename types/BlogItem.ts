@@ -1,5 +1,5 @@
 export type BlogItem = {
-	id: string;
+    id: string;
     title: string;
     updated_at: Date;
     eyecatch: {

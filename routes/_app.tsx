@@ -1,5 +1,6 @@
-import { type PageProps } from "$fresh/server.ts";
-export default function App({ Component }: PageProps) {
+import { define } from "../utils.ts";
+
+export default define.page(function App({ Component }) {
     return (
         <html>
             <head>
@@ -32,7 +33,7 @@ export default function App({ Component }: PageProps) {
                 />
                 <meta
                     property="og:image"
-                    content="images/icons/icon-512x512.png"
+                    content="/images/icons/icon-512x512.png"
                 />
                 <meta name="twitter:card" content="summary" />
 
@@ -48,16 +49,25 @@ export default function App({ Component }: PageProps) {
                 />
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-                <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500&display=swap" rel="stylesheet" />
+                <link
+                    rel="preconnect"
+                    href="https://fonts.gstatic.com"
+                    crossOrigin="anonymous"
+                />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500&display=swap"
+                    rel="stylesheet"
+                />
 
-                {/* スタイル適用 */}
+{/*
+                
                 <link rel="stylesheet" href="/styles/css/styles.css" />
                 <link rel="stylesheet" href="/styles/css/view-transition.css" />
+*/}
             </head>
             <body>
                 <Component />
             </body>
         </html>
     );
-}
+});

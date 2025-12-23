@@ -1,9 +1,9 @@
 name: Deploy
 on:
   push:
-    branches: main
+    branches: v2
   pull_request:
-    branches: main
+    branches: v2
 
 jobs:
   deploy:
@@ -29,8 +29,8 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "opcofficial"
-          entrypoint: "main.ts"
-          root: "."
+          project: "opcofficial-v2test"
+          entrypoint: "./_fresh/server.js"
+          root: ""
           
           
