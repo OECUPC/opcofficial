@@ -28,8 +28,7 @@ export default define.page(function Home() {
                     <h2 className="text-4xl text-center py-8">予定</h2>
                     <article className="flex justify-center">
                         <iframe
-                            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&src=b2VjdXByb2dyYW1taW5nY2lyY2xlQGdtYWlsLmNvbQ&src=Yjg0ZGZlYTExMGExMDM1NDc4OGE5Nzg2NGQ0OGMwNGEwYmRkNzRkZDBmNzQyNWRiMDMwNDk0NDU5OTEzM2ZhMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%23F4511E&color=%230B8043&color=%230B8043"
-                            style="border:solid 1px #777"
+                            src="https://calendar.google.com/calendar/embed?wkst=1&ctz=Asia%2FTokyo&showTitle=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&src=Yjg0ZGZlYTExMGExMDM1NDc4OGE5Nzg2NGQ0OGMwNGEwYmRkNzRkZDBmNzQyNWRiMDMwNDk0NDU5OTEzM2ZhMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23f4511e"
                             frameborder="0"
                             scrolling="no"
                             className="w-full lg:w-2/3 aspect-square lg:aspect-video"
