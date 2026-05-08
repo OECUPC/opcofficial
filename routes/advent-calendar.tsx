@@ -61,6 +61,13 @@ export default define.page(function Home() {
                             <ul className="ml-8 list-disc">
                                 <li>
                                     <p>
+                                        <a href="https://qiita.com/advent-calendar/2025/oecu">
+                                            2025年
+                                        </a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
                                         <a href="https://qiita.com/advent-calendar/2024/oecu">
                                             2024年
                                         </a>
