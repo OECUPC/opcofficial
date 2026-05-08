@@ -1,0 +1,26 @@
+# サービスの定義
+services:
+
+  # OPC
+  opc:
+
+    # Dockerfileからイメージをビルド
+    build: .
+
+    # ホスト（自分のPC）とコンテナ内のファイルを同期
+    volumes:
+      - .:/app  # カレントディレクトリすべてをコンテナの/appにマウント
+
+    # コンテナ内の環境変数を設定
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # Docker上でのホットリロード
+
+    # 外部ファイルから環境変数を読み込む
+    env_file:
+      - .env
+    
+    ports:
+      - 5173:5173
+
+    # コンテナ起動時にdevを実行
+    command: deno run dev
